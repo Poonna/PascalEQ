@@ -198,18 +198,18 @@ public:
             b_(2, 0) = 1.0f;
 
             a_(0, 0) = omega * omega;
-            a_(1, 0) = MathConstants<FloatT>::sqrt2 / q;
+            a_(1, 0) = MathConstants<FloatT>::sqrt2 * omega;
             a_(2, 0) = 1.0f;
         }
         else
         {
             // Cut
             b_(0, 0) = omega * omega;
-            b_(1, 0) = sqrt(2.0f * gain_lin) * omega;
+            b_(1, 0) = MathConstants<FloatT>::sqrt2 * omega;
             b_(2, 0) = 1.0f;
 
             a_(0, 0) = omega * omega / gain_lin;
-            a_(1, 0) = sqrt(2.0f / gain_lin);
+            a_(1, 0) = sqrt(2.0f / gain_lin) * omega;
             a_(2, 0) = 1.0f;
         }
     }
